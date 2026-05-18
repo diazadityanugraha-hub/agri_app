@@ -8,6 +8,6 @@ workflows:
       - name: Build APK
         script: |
           flutter pub get
-          flutter build apk --release --android-skip-build-dependency-validation
+          flutter build apk --release --android-skip-build-dependency-validation --no-android-gradle-plugins-upgrade
     artifacts:
       - build/app/outputs/flutter-apk/app-release.apk
