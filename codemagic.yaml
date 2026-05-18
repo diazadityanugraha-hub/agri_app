@@ -3,11 +3,10 @@ workflows:
     name: Android Build
     max_build_duration: 60
     environment:
-      flutter: 3.41.9
+      flutter: latest
     scripts:
       - name: Build APK
         script: |
-          sed -i 's/version "1.9.24"/version "2.1.0"/g' android/settings.gradle.kts
           flutter pub get
           flutter build apk --release --android-skip-build-dependency-validation
     artifacts:
