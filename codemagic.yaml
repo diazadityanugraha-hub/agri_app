@@ -7,7 +7,8 @@ workflows:
     scripts:
       - name: Build APK
         script: |
+          sed -i 's/version "1.9.24"/version "2.1.0"/g' android/settings.gradle.kts
           flutter pub get
-          flutter build apk --release --android-skip-build-dependency-validation --no-android-gradle-plugins-upgrade
+          flutter build apk --release --android-skip-build-dependency-validation
     artifacts:
       - build/app/outputs/flutter-apk/app-release.apk
