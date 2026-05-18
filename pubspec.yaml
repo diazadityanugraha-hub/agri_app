@@ -1,0 +1,42 @@
+name: agripedia_app
+description: "Aplikasi Deteksi Penyakit Padi menggunakan AI YOLO, Kalkulator Pupuk, dan Katalog Pustaka."
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # --- LIBRARY TAMBAHAN ---
+  geolocator: ^14.0.2
+  http: ^1.1.0
+  intl: ^0.20.2
+  cupertino_icons: ^1.0.5
+  
+  # --- PENYIMPANAN PERMANEN ---
+  # SUDAH SAYA PERBAIKI: Tanpa tanda ^ agar tidak ambil versi rusak
+  shared_preferences: ^2.5.5
+
+  # --- LIBRARY AI & MEDIA ---
+  camera: ^0.11.4
+  image_picker: ^1.2.2 
+  image_picker_android: ^0.8.13+17
+  
+  flutter_vision: ^2.0.0
+  firebase_core: ^4.9.0
+  cloud_firestore: ^6.4.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/models/padi_model.tflite
+    - assets/models/labels.txt
